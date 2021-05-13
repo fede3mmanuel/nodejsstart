@@ -1,9 +1,7 @@
-const { readFile, readFileSync } = require('fs');
+const { readFile } = require('fs').promises;
+async function hello() {
+    const file = await readFile('./hello.txt', 'utf-8');
+    console.log('promise');
+}
 
-const txt = readFileSync('./hello.txt', 'utf8');
-console.log(txt);
-
-readFile('./hello.txt', 'utf8', (err,txt) => {
-    console.log(txt);
-});
-console.log('finish line');
+hello();
