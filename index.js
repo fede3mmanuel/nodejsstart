@@ -1,11 +1,5 @@
-const { EventEmitter } = require('events');
-const eventEmitter = new EventEmitter();
+const { readFile, readFileSync } = require('fs');
 
-eventEmitter.on('lunch', () => {
-
-    console.log('yum');
-
-})
-
-eventEmitter.emit('lunch');
-eventEmitter.emit('lunch');
+const txt = readFileSync('./hello.txt', 'utf8');
+console.log(txt);
+console.log('finish line');
